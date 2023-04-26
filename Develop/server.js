@@ -1,14 +1,15 @@
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
+const api = require("./routes/index.js");
 
 const app = express();
 
 // MiddleWare
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-app.use(express.static("./public/index.html"));
+app.use(express.static("public"));
+app.use("/api", api);
 
 // Get Route for Main Page
 app.get("/", (req, res) => {
