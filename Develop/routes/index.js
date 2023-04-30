@@ -1,6 +1,6 @@
 const express = require("express");
 
-// Importing routes from notes.js
+// Importing route from notes.js
 const notesRouter = require("./notes");
 
 const app = express();
