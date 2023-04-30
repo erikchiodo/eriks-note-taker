@@ -1,7 +1,7 @@
 const notes = require("express").Router();
 const uuid = require("../helpers/uuid.js");
 const fs = require("fs");
-const noteData = require("../db/notes.json");
+const noteData = require("/db/notes.json");
 
 // Get Route for Notes Data
 notes.get("/", (req, res) => {
@@ -37,7 +37,7 @@ notes.post("/", (req, res) => {
     };
 
     // TODO: Write notes to notes.json
-    fs.writeFile("notes.json", request, { flag: "a" }, (err) => {
+    fs.writeFile("/db/notes.json", request, { flag: "a" }, (err) => {
       if (err) throw err;
       console.log("New note added to notes.json");
     });
